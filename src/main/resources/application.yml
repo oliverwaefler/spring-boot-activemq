@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    non-blocking-redelivery: true
+  jms:
+    template:
+      receive-timeout: 2000
+
+activemq:
+  broker-url: tcp://localhost:61616
+  target:
+    queue: job_queue
+    topic: pub_sub_topic
+    rpc: rpc_topic
