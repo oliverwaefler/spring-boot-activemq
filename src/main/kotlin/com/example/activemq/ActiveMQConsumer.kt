@@ -23,7 +23,6 @@ class ActiveMQConsumer(val jmsTemplate: JmsTemplate) {
 		logger.info("consumeQueue2 $message")
 	}
 
-
 	@JmsListener(destination = "\${activemq.target.topic}", containerFactory = "jmsTopicContainerFactory")
 	fun consumeTopic1(message: MyData) {
 		logger.info("consumeTopic1  $message")
@@ -34,9 +33,6 @@ class ActiveMQConsumer(val jmsTemplate: JmsTemplate) {
 		logger.info("consumeTopic2  $message")
 	}
 
-	/**
-	 * Tick mit Topic
-	 */
 	@JmsListener(destination = "\${activemq.target.rpc}", containerFactory = "jmsTopicContainerFactory")
 	fun consumeRPC(message: Message) {
 		logger.info("consumeRPC $message")
